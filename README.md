@@ -39,7 +39,7 @@ Basta clonar o projeto, abrir no VSCode (Ou editor de sua preferência)
 
 Usar o comando: yarn install (Para instalar as dependências necessárias)
 
-Usar o comando: yarn start
+Usar o comando: yarn start (Para iniciar o projeto)
 
 ## Extensões
 [Styled-Components] (https://github.com/styled-components/styled-components)
