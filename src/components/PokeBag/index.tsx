@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import swal from 'sweetalert';
 import { IoIosRemoveCircleOutline, IoIosAddCircleOutline } from 'react-icons/io';
 import { GiSchoolBag } from 'react-icons/gi';
@@ -11,6 +11,10 @@ import { Container, HeaderContent, FinishButton, Info, ItemsContent, Product, Qu
 export default function PokeBag () {
     const { products, setQuantity, removeProduct, cleanProdutcs } = useBagContext();
     const { currentTheme } = useThemeContext();
+
+    useEffect(() => {
+        cleanProdutcs();
+    },[currentTheme, cleanProdutcs]);
 
     const onChangeQuantity = useCallback((product: ProductData, index: number, isAdd: boolean) => {
         let count = product.quantity;
