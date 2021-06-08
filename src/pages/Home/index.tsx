@@ -11,13 +11,13 @@ export default function Home() {
             <h1> Bem vindo ao PokeMarket! </h1>
             <h2> Escolha seu elemento favorito. </h2>
             <Content>
-            <Link to={'/catalog/fire'}>
+            <Link to='/catalog/fire'>
                 <img src={fire} alt="Fogo" />
             </Link>
-            <Link to={'/catalog/water'}>
+            <Link to='/catalog/water'>
                 <img src={water} alt="Água" />
             </Link>
-            <Link to={'/catalog/electric'}>
+            <Link to='/catalog/electric'>
                 <img src={electric} alt="Elétrico" />
             </Link>
             </Content>
