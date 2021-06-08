@@ -63,7 +63,7 @@ export default function Catalog() {
     useEffect(() => {
         getDataApi();
         setSlug(slug.location.pathname)
-    }, [setBaseList, getDataApi, setSlug, slug]);
+    }, [getDataApi, setSlug, slug]);
 
     useEffect(() => {
         searchFilterList(filterText);
