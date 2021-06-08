@@ -54,9 +54,13 @@ Usar o comando: yarn start (Para iniciar o projeto)
 ## Extensões
 [Styled-Components] (https://github.com/styled-components/styled-components)
 
+[Context] (https://pt-br.reactjs.org/docs/context.html)
+
 [Hooks] (https://pt-br.reactjs.org/docs/hooks-intro.html)
 
 [React Icons] (https://react-icons.github.io/react-icons/)
 
 [Axios] (https://github.com/axios/axios)
+
+[TypeScript] (https://www.typescriptlang.org/)
 
