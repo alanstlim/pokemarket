@@ -33,6 +33,16 @@ Email: alanstlim@gmail.com
 LinkedIn: https://www.linkedin.com/in/alanstlim/
 
 
+## Acesso
+
+<p align="center"><strong>Acesse a demo clicando no link abaixo</strong></p>
+<p align="center">
+  <a href="https://pokemarketstlim.netlify.app/" target="_blank">
+    <img alt="Demo on Netlify" src="https://res.cloudinary.com/lukemorales/image/upload/v1563043495/readme_logos/demo_on_netlify_bbuvjz.png">
+  </a>
+</p>
+
+
 ## Instalar
 
 Basta clonar o projeto, abrir no VSCode (Ou editor de sua preferência)
@@ -44,9 +54,13 @@ Usar o comando: yarn start (Para iniciar o projeto)
 ## Extensões
 [Styled-Components] (https://github.com/styled-components/styled-components)
 
+[Context] (https://pt-br.reactjs.org/docs/context.html)
+
 [Hooks] (https://pt-br.reactjs.org/docs/hooks-intro.html)
 
 [React Icons] (https://react-icons.github.io/react-icons/)
 
 [Axios] (https://github.com/axios/axios)
+
+[TypeScript] (https://www.typescriptlang.org/)
 
