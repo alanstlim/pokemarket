@@ -52,7 +52,7 @@ export default function PokeBag () {
         const resumePurchased = JSON.parse(localStorage.getItem(`@PokeMarket:purchased${currentTheme}`) || '[]');
         if (products.length !== 0) {
             const now = new Date();
-            const today = now.getDate() + '/' + now.getMonth() + '/' + now.getFullYear();
+            const today = now.getDate() + '/' + (now.getMonth() +1) + '/' + now.getFullYear();
             const newPurchase = [
                 ...resumePurchased,
                 {
