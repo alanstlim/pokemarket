@@ -1,76 +1,92 @@
-import { useMemo } from "react";
+import { useMemo } from 'react';
 import trainer from '../../assets/trainer.png';
-import Achievements from "../../components/Achievements";
-import Header from "../../components/Header";
-import { ProductData } from "../../components/PokeCard";
-import { useThemeContext } from "../../hooks/ThemeContext";
-import { Container, Content, InfoContent, ProfileContent, AchievementsContent, ResumeContent, PurchaseContent, TopContent, ProductContent, ItemContent } from "./styles";
+import { Achievements } from '../../components/Achievements';
+import { Header } from '../../components/Header';
+import { ProductData } from '../../components/PokeCard';
+import { useThemeContext } from '../../hooks/ThemeContext';
+import {
+  Container,
+  Content,
+  InfoContent,
+  ProfileContent,
+  AchievementsContent,
+  ResumeContent,
+  PurchaseContent,
+  TopContent,
+  ProductContent,
+  ItemContent,
+} from './styles';
 
 type PurchaseData = {
-    datePurchased: Date,
-    totalPrice: string,
-    products: ProductData[]
-}
+  datePurchased: Date;
+  totalPrice: string;
+  products: ProductData[];
+};
 
-export default function TrainerProfile() {
-    const { currentTheme } = useThemeContext();
-    const resumePurchased = JSON.parse(localStorage.getItem(`@PokeMarket:purchased${currentTheme}`) || '[]');
+export const TrainerProfile: React.FC = () => {
+  const { currentTheme } = useThemeContext();
+  const resumePurchased = JSON.parse(
+    localStorage.getItem(`@PokeMarket:purchased${currentTheme}`) || '[]',
+  );
 
-    const countAchievements = useMemo(() => {
-        return resumePurchased.length
-    }, [resumePurchased])
+  const countAchievements = useMemo(() => {
+    return resumePurchased.length;
+  }, [resumePurchased]);
 
-    return (
-        <Container>
-            <Header />
-            <Content>
-                <ProfileContent>
-                    <img src={trainer} alt="Avatar" />
-                    <InfoContent>
-                        <p> Nome </p>
-                        <p> Oak </p>
-                    </InfoContent>
-                    <InfoContent>
-                        <p> Idade </p>
-                        <p> 25 </p>
-                    </InfoContent>
-                    <InfoContent>
-                        <p> Cidade Natal </p>
-                        <p> Pallet </p>
-                    </InfoContent>
-                    <InfoContent>
-                        <p> Compras Efetuadas </p>
-                        <p> {countAchievements} </p>
-                    </InfoContent>
-                    <AchievementsContent>
-                        {countAchievements > 0 ?
-                            <Achievements length={countAchievements} />
-                            :
-                            <p> Realize compras para obter conquistas.</p>
-                        }
-                    </AchievementsContent>
-                </ProfileContent>
-                <ResumeContent>
-                    <h1> Histórico de Compras </h1>
-                    {resumePurchased &&
-                        resumePurchased.map((sales: PurchaseData, index: number) => (
-                            <PurchaseContent key={index}>
-                                <TopContent>
-                                    <p> Valor da compra: {sales.totalPrice} </p>
-                                    <p> Data do pedido: {sales.datePurchased} </p>
-                                </TopContent>
-                                <ProductContent>
-                                    {sales.products.map((product: ProductData, index: number) => (
-                                        <ItemContent key={index}>
-                                            <img src={product.sprite} alt={product.name} />
-                                            <p> <small> x </small> {product.quantity} </p>
-                                        </ItemContent>
-                                    ))}
-                                </ProductContent>
-                            </PurchaseContent>
-                        ))}
-                </ResumeContent>
-            </Content>
-        </Container>
-    );
-}
+  return (
+    <Container>
+      <Header />
+      <Content>
+        <ProfileContent>
+          <img src={trainer} alt="Avatar" />
+          <InfoContent>
+            <p> Nome </p>
+            <p> Oak </p>
+          </InfoContent>
+          <InfoContent>
+            <p> Idade </p>
+            <p> 25 </p>
+          </InfoContent>
+          <InfoContent>
+            <p> Cidade Natal </p>
+            <p> Pallet </p>
+          </InfoContent>
+          <InfoContent>
+            <p> Compras Efetuadas </p>
+            <p> {countAchievements} </p>
+          </InfoContent>
+          <AchievementsContent>
+            {countAchievements > 0 ? (
+              <Achievements length={countAchievements} />
+            ) : (
+              <p> Realize compras para obter conquistas.</p>
+            )}
+          </AchievementsContent>
+        </ProfileContent>
+        <ResumeContent>
+          <h1> Histórico de Compras </h1>
+          {resumePurchased &&
+            resumePurchased.map((sales: PurchaseData, index: number) => (
+              <PurchaseContent key={index}>
+                <TopContent>
+                  <p> Valor da compra: {sales.totalPrice} </p>
+                  <p> Data do pedido: {sales.datePurchased} </p>
+                </TopContent>
+                <ProductContent>
+                  {sales.products.map((product: ProductData, index: number) => (
+                    <ItemContent key={index}>
+                      <img src={product.sprite} alt={product.name} />
+                      <p>
+                        {' '}
+                        <small> x </small> {product.quantity}{' '}
+                      </p>
+                    </ItemContent>
+                  ))}
+                </ProductContent>
+              </PurchaseContent>
+            ))}
+        </ResumeContent>
+      </Content>
+    </Container>
+  );
+};

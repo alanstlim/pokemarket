@@ -6,12 +6,12 @@ export default createGlobalStyle`
         padding: 0;
         font: 400 1rem Staatliches, sans-serif;
     }
-`
+`;
 
 export const Container = styled.div`
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    overflow-y: hidden;
-    height: 100vh;
-`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: hidden;
+  height: 100vh;
+`;

@@ -1,14 +1,19 @@
 import { IoMdSearch } from 'react-icons/io';
 import { useSearchContext } from '../../hooks/SearchContext';
-import { Container } from "./styles";
+import { Container } from './styles';
 
-export default function SearchBar () {
-    const { setFilterText} = useSearchContext();
+export const SearchBar: React.FC = () => {
+  const { setFilterText } = useSearchContext();
 
-    return(
-        <Container>
-            <IoMdSearch size={24} />
-            <input placeholder='Quem é este Pokemon?'  type='text' name='searchPoke' onChange={(event) => setFilterText(event.target.value)}/>
-        </Container>
-    )
-}
+  return (
+    <Container>
+      <IoMdSearch size={24} />
+      <input
+        placeholder="Quem é este Pokemon?"
+        type="text"
+        name="searchPoke"
+        onChange={event => setFilterText(event.target.value)}
+      />
+    </Container>
+  );
+};
