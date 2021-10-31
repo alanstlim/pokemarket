@@ -5,8 +5,11 @@ export const Container = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  overflow-y: scroll;
   background-color: ${props => props.theme.secondary};
+
+  @media (max-width: 660px) {
+    overflow-y: scroll;
+  }
 `;
 
 export const Content = styled.div`
@@ -14,7 +17,7 @@ export const Content = styled.div`
   padding: 0.5rem 0;
   align-items: center;
   flex-wrap: wrap;
-  height: Calc(100vh - 100px);
+  height: 88vh;
 `;
 
 export const ProfileContent = styled.div`

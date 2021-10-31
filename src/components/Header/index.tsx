@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
     <Container>
       <Logo>
         <Link to="/">
-          <CgArrowLeft size={30} />
+          <CgArrowLeft size={24} />
         </Link>
         <Link to={slugCatalog}>
           <img src={logo} alt="PokeMarket" />

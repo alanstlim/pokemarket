@@ -4,7 +4,7 @@ import colors from '../../styles/colors';
 export const Container = styled.div`
   flex: 1;
   display: flex;
-  height: 80px;
+  height: 55px;
   padding: 0 0.5rem;
   background-color: ${props => props.theme.primary};
   justify-content: space-between;
@@ -12,7 +12,7 @@ export const Container = styled.div`
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.5);
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -21,7 +21,7 @@ export const Logo = styled.div`
   align-items: center;
 
   img {
-    height: 80px;
+    height: 50px;
   }
 
   svg {
@@ -49,7 +49,7 @@ export const Profile = styled.div`
   }
 
   img {
-    height: 70px;
+    height: 55px;
     background-color: ${colors.whiteAux};
     border-radius: 35px;
     margin-left: -1rem;

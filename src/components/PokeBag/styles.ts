@@ -12,6 +12,10 @@ export const Container = styled.div`
   padding: 1rem 0;
   border-radius: 5px;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
 `;
 
 export const HeaderContent = styled.div`
