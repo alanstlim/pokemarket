@@ -7,7 +7,7 @@
 
 A ideia do aplicativo é:
 
->"3 e-Commerce que reutilizam um mesmo layout mudando apenas o tema de acordo com o elemento selecionado."
+>"3 e-Commerces que reutilizam um mesmo layout mudando apenas o tema de acordo com o elemento selecionado."
 
 ## Funcionalidades
 - [x] Tema de acordo com o elemento selecionado.
