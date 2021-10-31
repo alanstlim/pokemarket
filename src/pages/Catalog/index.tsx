@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Header } from '../../components/Header';
-import { Modal } from '../../components/Modal';
+import { ModalBag } from '../../components/ModalBag';
+import { ModalStats } from '../../components/ModalStats';
 import { PokeBag } from '../../components/PokeBag';
 import { PokeCard } from '../../components/PokeCard';
 import { SearchBar } from '../../components/SearchBar';
@@ -75,7 +76,8 @@ export const Catalog: React.FC = () => {
 
   return (
     <Container>
-      <Modal />
+      <ModalStats />
+      <ModalBag />
       <Header />
       <Content>
         <BodyContent>
@@ -87,7 +89,7 @@ export const Catalog: React.FC = () => {
               ))}
           </CatalogContent>
         </BodyContent>
-        <PokeBag />
+        <PokeBag inCatalog />
       </Content>
     </Container>
   );

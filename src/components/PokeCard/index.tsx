@@ -59,7 +59,7 @@ export const PokeCard: React.FC<Card> = ({ url }) => {
     {} as PokemonData,
   );
   const { products, setProduct, setQuantity } = useBagContext();
-  const { getIsOpen, getPokeInfo } = useModalContext();
+  const { setIsOpenStats, getPokeInfo } = useModalContext();
 
   const handleApi = useCallback(async () => {
     if (url) {
@@ -157,9 +157,9 @@ export const PokeCard: React.FC<Card> = ({ url }) => {
   }, [handleApi]);
 
   const showModal = useCallback(() => {
-    getIsOpen(true);
+    setIsOpenStats(true);
     getPokeInfo(pokemonData);
-  }, [pokemonData, getPokeInfo, getIsOpen]);
+  }, [pokemonData, getPokeInfo, setIsOpenStats]);
 
   return (
     <Container>

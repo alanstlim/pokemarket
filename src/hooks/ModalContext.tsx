@@ -4,26 +4,34 @@ import { PokemonData } from '../components/PokeCard';
 export type ModalContextData = {
   pokeInfo?: PokemonData;
   getPokeInfo(pokemon: PokemonData): void;
-  isOpen: boolean;
-  getIsOpen(open: boolean): void;
+  isOpenStats: boolean;
+  setIsOpenStats(open: boolean): void;
+  isOpenBag: boolean;
+  setIsOpenBag(open: boolean): void;
 };
 
 const ModalContext = createContext<ModalContextData>({} as ModalContextData);
 
 const ModalProvider: React.FC = ({ children }) => {
   const [pokeInfo, setPokeInfo] = useState<PokemonData>({} as PokemonData);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenStats, setIsOpenStats] = useState(false);
+  const [isOpenBag, setIsOpenBag] = useState(false);
 
   const getPokeInfo = useCallback((pokemon: PokemonData) => {
     setPokeInfo(pokemon);
   }, []);
 
-  const getIsOpen = useCallback((open: boolean) => {
-    setIsOpen(open);
-  }, []);
-
   return (
-    <ModalContext.Provider value={{ pokeInfo, getPokeInfo, isOpen, getIsOpen }}>
+    <ModalContext.Provider
+      value={{
+        pokeInfo,
+        getPokeInfo,
+        isOpenStats,
+        setIsOpenStats,
+        isOpenBag,
+        setIsOpenBag,
+      }}
+    >
       {children}
     </ModalContext.Provider>
   );

@@ -1,7 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import colors from '../../styles/colors';
 
-export const Container = styled.div`
+type PokeBagProps = {
+  inCatalog: boolean;
+};
+
+export const Container = styled.div<PokeBagProps>`
   display: flex;
   flex: 1;
   align-items: center;
@@ -14,7 +18,14 @@ export const Container = styled.div`
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 1100px) {
-    display: none;
+    ${props =>
+      props.inCatalog
+        ? css`
+            display: none;
+          `
+        : css`
+            display: flex;
+          `};
   }
 `;
 

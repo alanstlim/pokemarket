@@ -22,7 +22,11 @@ import {
   TotalContent,
 } from './styles';
 
-export const PokeBag: React.FC = () => {
+type PokeBagProps = {
+  inCatalog?: boolean;
+};
+
+export const PokeBag: React.FC<PokeBagProps> = ({ inCatalog = false }) => {
   const { products, setQuantity, removeProduct, cleanProdutcs } =
     useBagContext();
   const { currentTheme } = useThemeContext();
@@ -90,7 +94,7 @@ export const PokeBag: React.FC = () => {
   }, [products, cleanProdutcs, totalPrice, currentTheme, handlePopUp]);
 
   return (
-    <Container>
+    <Container inCatalog={inCatalog}>
       <HeaderContent>
         <GiSchoolBag size={32} />
         <p> PokeBag </p>

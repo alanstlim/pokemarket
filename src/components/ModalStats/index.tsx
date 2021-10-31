@@ -13,8 +13,8 @@ import { useModalContext } from '../../hooks/ModalContext';
 import { ProductData } from '../PokeCard';
 import { useBagContext } from '../../hooks/BagContext';
 
-export const Modal: React.FC = () => {
-  const { isOpen, pokeInfo, getIsOpen } = useModalContext();
+export const ModalStats: React.FC = () => {
+  const { isOpenStats, pokeInfo, setIsOpenStats } = useModalContext();
   const { setProduct, setQuantity, products } = useBagContext();
 
   const calculatePrice = useMemo(() => {
@@ -55,7 +55,7 @@ export const Modal: React.FC = () => {
       setProduct(product);
     }
 
-    getIsOpen(false);
+    setIsOpenStats(false);
   }, [
     setProduct,
     formatedPrice,
@@ -63,12 +63,12 @@ export const Modal: React.FC = () => {
     setQuantity,
     calculatePrice,
     pokeInfo,
-    getIsOpen,
+    setIsOpenStats,
   ]);
 
   return (
     <>
-      {isOpen ? (
+      {isOpenStats ? (
         <BackgroundModal>
           <Container>
             <ContentColumn>
@@ -76,7 +76,7 @@ export const Modal: React.FC = () => {
                 <p>
                   {pokeInfo?.name} - {formatedPrice}
                 </p>
-                <button type="button" onClick={() => getIsOpen(false)}>
+                <button type="button" onClick={() => setIsOpenStats(false)}>
                   <CgClose size={24} />
                 </button>
               </HeaderContent>
