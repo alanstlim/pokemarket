@@ -33,6 +33,13 @@ export const TrainerProfile: React.FC = () => {
     return resumePurchased.length;
   }, [resumePurchased]);
 
+  const userData = {
+    name: 'Oak',
+    age: 25,
+    hometown: 'Pallet',
+    achievements: countAchievements,
+  };
+
   return (
     <Container>
       <Header />
@@ -41,19 +48,19 @@ export const TrainerProfile: React.FC = () => {
           <img src={trainer} alt="Avatar" />
           <InfoContent>
             <p> Nome </p>
-            <p> Oak </p>
+            <p> {userData.name} </p>
           </InfoContent>
           <InfoContent>
             <p> Idade </p>
-            <p> 25 </p>
+            <p> {userData.age} </p>
           </InfoContent>
           <InfoContent>
             <p> Cidade Natal </p>
-            <p> Pallet </p>
+            <p> {userData.hometown} </p>
           </InfoContent>
           <InfoContent>
             <p> Compras Efetuadas </p>
-            <p> {countAchievements} </p>
+            <p> {userData.achievements} </p>
           </InfoContent>
           <AchievementsContent>
             {countAchievements > 0 ? (
@@ -77,8 +84,7 @@ export const TrainerProfile: React.FC = () => {
                     <ItemContent key={index}>
                       <img src={product.sprite} alt={product.name} />
                       <p>
-                        {' '}
-                        <small> x </small> {product.quantity}{' '}
+                        <small> x </small> {product.quantity}
                       </p>
                     </ItemContent>
                   ))}

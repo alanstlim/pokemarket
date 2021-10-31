@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import swal from 'sweetalert';
 import {
   IoIosRemoveCircleOutline,
@@ -26,10 +26,6 @@ export const PokeBag: React.FC = () => {
   const { products, setQuantity, removeProduct, cleanProdutcs } =
     useBagContext();
   const { currentTheme } = useThemeContext();
-
-  useEffect(() => {
-    cleanProdutcs();
-  }, [currentTheme, cleanProdutcs]);
 
   const onChangeQuantity = useCallback(
     (product: ProductData, index: number, isAdd: boolean) => {
