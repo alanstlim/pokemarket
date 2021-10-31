@@ -1,4 +1,11 @@
-import { createContext, useCallback, useContext, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import { useThemeContext } from './ThemeContext';
 
 type ProductData = {
   id?: number;
@@ -20,6 +27,7 @@ export type BagContextData = {
 const BagContext = createContext<BagContextData>({} as BagContextData);
 
 const BagProvider: React.FC = ({ children }) => {
+  const { currentTheme } = useThemeContext();
   const [products, setProducts] = useState<ProductData[]>([]);
 
   const setProduct = useCallback(
@@ -52,6 +60,21 @@ const BagProvider: React.FC = ({ children }) => {
   const cleanProdutcs = useCallback(() => {
     setProducts([]);
   }, []);
+
+  useEffect(() => {
+    const cartInStorage = JSON.parse(
+      localStorage.getItem(`@PokeMarket:cart${currentTheme}`) || '[]',
+    );
+
+    setProducts(cartInStorage);
+  }, [currentTheme]);
+
+  useEffect(() => {
+    localStorage.setItem(
+      `@PokeMarket:cart${currentTheme}`,
+      JSON.stringify(products),
+    );
+  }, [currentTheme, products]);
 
   return (
     <BagContext.Provider
