@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
 
-export const Teste = styled.div`
+export const BackgroundModal = styled.div`
   z-index: 999;
   position: absolute;
   justify-content: center;
@@ -17,6 +17,7 @@ export const Container = styled.div`
   height: auto;
   width: 500px;
   display: flex;
+  text-transform: capitalize;
   justify-content: center;
   background-color: ${colors.whiteAux};
   border: 5px outset ${props => props.theme.primary};

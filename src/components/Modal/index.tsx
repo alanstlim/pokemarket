@@ -7,7 +7,7 @@ import {
   StatusContent,
   HeaderContent,
   FooterContent,
-  Teste,
+  BackgroundModal,
 } from './styles';
 import { useModalContext } from '../../hooks/ModalContext';
 import { ProductData } from '../PokeCard';
@@ -69,7 +69,7 @@ export const Modal: React.FC = () => {
   return (
     <>
       {isOpen ? (
-        <Teste>
+        <BackgroundModal>
           <Container>
             <ContentColumn>
               <HeaderContent>
@@ -100,7 +100,7 @@ export const Modal: React.FC = () => {
               </FooterContent>
             </ContentColumn>
           </Container>
-        </Teste>
+        </BackgroundModal>
       ) : null}
     </>
   );
